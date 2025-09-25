@@ -90,7 +90,7 @@ Run the main notebook step by step:
 
 ---
 
-## 📈 Results (Example)
+## 📈 Results 
 
 | Setup     | Decoder | Val Acc | Test Acc | Test WCSR (Maj/Min) |
 | --------- | ------- | ------- | -------- | ------------------- |
