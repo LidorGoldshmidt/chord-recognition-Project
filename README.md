@@ -1,4 +1,4 @@
-# 🎶 Transformer-Based Chord Recognition
+# Automatic Chord Recognition with Transformers 🎸
 
 This repository contains the code and experiments for our project on **automatic chord recognition** using a Transformer-based model trained on the **GuitarSet dataset**.
 The system combines a convolutional front-end with a Transformer encoder to capture both spectral and temporal patterns in music audio.
@@ -21,7 +21,7 @@ The system combines a convolutional front-end with a Transformer encoder to capt
 Chord_Recognition.ipynb   # Main notebook with full pipeline
 README.md                 # Project documentation
 checkpoints/              # Saved model weights (best.pt)
-splits_gs_seed42.npz      # Pre-saved train/val/test song splits
+splits_seed2025.npz      # Pre-saved train/val/test song splits
 ```
 
 ---
@@ -43,17 +43,29 @@ splits_gs_seed42.npz      # Pre-saved train/val/test song splits
 
    Core dependencies include:
 
+   * Python ≥ 3.9
+   * PyTorch ≥ 2.0
    * `torch`, `torchvision`, `torchaudio`
    * `numpy`, `scipy`, `scikit-learn`
    * `matplotlib`, `seaborn`
    * `librosa`
 
-3. (Optional) Download [GuitarSet dataset](https://github.com/marl/guitarset) and place the `.jams` and `.wav` files in a `data/` directory.
+4. Dataset
+
+   We use GuitarSet, a collection of 360 annotated 30-second excerpts with hexaphonic guitar recordings.
+   Annotations are provided in Harte notation and converted to frame-level labels aligned with Constant-Q Transform (CQT) spectrograms.
+  
+   (Optional) Download [GuitarSet dataset](https://github.com/marl/guitarset) and place the `.jams` and `.wav` files in a `data/` directory.
 
 ---
 
 ## 📊 Usage
 
+All experiments are in the provided Jupyter notebook:
+
+```bash
+jupyter notebook Chord_Recognition.ipynb
+```
 Run the main notebook step by step:
 
 1. **Data Preparation**
@@ -90,15 +102,24 @@ Run the main notebook step by step:
 
 ---
 
-## 📈 Results 
 
-| Setup     | Decoder | Val Acc | Test Acc | Test WCSR (Maj/Min) |
-| --------- | ------- | ------- | -------- | ------------------- |
-| Baseline  | Median  | 0.818   | 0.798    | 0.798               |
-| Light Aug | Median  | 0.814   | 0.809    | 0.809               |
+## 📈 Results Showcase
 
-* Augmentation (SpecAugment) slightly improved **test accuracy** and WCSR.
-* Viterbi decoding provided **temporal consistency** but limited gains compared to median filtering.
+Comparison of Baseline vs. Light Augmentation (SpecAugment) on GuitarSet (Maj/Min vocabulary).
+
+| Setup         | Decoder  | Val Acc | Test Acc | Val WCSR | Test WCSR |
+|---------------|----------|---------|----------|----------|-----------|
+| **Baseline**  | Argmax   | 0.815   | 0.798    | 0.815    | 0.798     |
+|               | Median   | 0.818   | 0.798    | 0.818    | 0.798     |
+|               | Viterbi  | 0.824   | 0.798    | 0.824    | 0.798     |
+| **Light Aug** | Argmax   | 0.814   | 0.809    | 0.814    | 0.809     |
+|               | Median   | 0.814   | 0.809    | 0.814    | 0.809     |
+|               | Viterbi  | 0.814   | 0.807    | 0.814    | 0.807     |
+
+**Key Takeaways**:
+- Light augmentation slightly boosts test accuracy (+1% absolute).  
+- Median filtering and Viterbi smoothing help stabilize predictions but do not dramatically change WCSR.  
+- The Transformer baseline is already strong and competitive with state-of-the-art results reported in MIR literature.
 
 ---
 
@@ -109,6 +130,14 @@ Run the main notebook step by step:
 * Explore **multi-modal input** (e.g., MIDI, tablature)
 * Test cross-dataset generalization (Isophonics, Beatles dataset)
 * Move toward **real-time recognition** for interactive applications
+
+---
+
+## Credits
+
+* Dataset: [GuitarSet](https://github.com/marl/guitarset)
+* Inspiration: Research in chord recognition with CNNs, HMMs, and Transformers
+* Developed as part of an academic project on Automatic Music Transcription and Analysis.
 
 ---
 
