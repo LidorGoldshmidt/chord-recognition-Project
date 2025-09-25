@@ -133,7 +133,7 @@ Comparison of Baseline vs. Light Augmentation (SpecAugment) on GuitarSet (Maj/Mi
 
 ---
 
-## Credits
+## ⚡ Credits
 
 * Dataset: [GuitarSet](https://github.com/marl/guitarset)
 * Inspiration: Research in chord recognition with CNNs, HMMs, and Transformers
@@ -153,12 +153,4 @@ If you use this work, please cite:
   note={GitHub repository}
 }
 ```
-
----
-
-⚡ **Acknowledgments**:
-
-* GuitarSet dataset creators
-* Previous chord recognition research (Li, Osmalskyj, Park et al.)
-* HuggingFace / PyTorch community for model tools
 
