@@ -20,6 +20,7 @@ The system combines a convolutional front-end with a Transformer encoder to capt
 ```
 Chord_Recognition.ipynb   # Main notebook with full pipeline
 README.md                 # Project documentation
+requirements.txt         # required imports
 visuals/                 # pictures of evaluation plots
 splits_seed2025.npz      # Pre-saved train/val/test song splits
 ```
