@@ -1,2 +1,2 @@
-# chord-recognition-Project
+# Chord Recognition
 Transformer-based chord recognition using GuitarSet
