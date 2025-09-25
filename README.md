@@ -20,7 +20,7 @@ The system combines a convolutional front-end with a Transformer encoder to capt
 ```
 Chord_Recognition.ipynb   # Main notebook with full pipeline
 README.md                 # Project documentation
-checkpoints/              # Saved model weights (best.pt)
+visuals/                 # pictures of evaluation plots
 splits_seed2025.npz      # Pre-saved train/val/test song splits
 ```
 
@@ -120,6 +120,19 @@ Comparison of Baseline vs. Light Augmentation (SpecAugment) on GuitarSet (Maj/Mi
 - Light augmentation slightly boosts test accuracy (+1% absolute).  
 - Median filtering and Viterbi smoothing help stabilize predictions but do not dramatically change WCSR.  
 - The Transformer baseline is already strong and competitive with state-of-the-art results reported in MIR literature.
+
+---
+
+## 🎵 Pretrained Model
+
+We provide the best-performing model checkpoint so you can reproduce our results without retraining from scratch.
+
+### 📥 Download
+
+The pretrained weights are **not stored directly in the repository** (due to GitHub’s file size limits).  
+Instead, you can download them from the [Releases page](../../releases) — look for the asset:
+
+- `chord_tx_best.pt`
 
 ---
 
