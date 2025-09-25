@@ -130,7 +130,7 @@ We provide the best-performing model checkpoint so you can reproduce our results
 ### 📥 Download
 
 The pretrained weights are **not stored directly in the repository** (due to GitHub’s file size limits).  
-Instead, you can download them from the [Releases page](../../releases) — look for the asset:
+Instead, you can download them from the [Releases page](https://github.com/LidorGoldshmidt/chord-recognition-Project/releases)— look for the asset:
 
 - `chord_tx_best.pt`
 
