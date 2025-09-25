@@ -133,10 +133,3 @@ If you use this work, please cite:
 * Previous chord recognition research (Li, Osmalskyj, Park et al.)
 * HuggingFace / PyTorch community for model tools
 
----
-
-👉 Next step: once you upload this `README.md` to your repo, GitHub will render it nicely on your project’s front page.
-
----
-
-Would you like me to also generate a **`requirements.txt`** from your notebook so that anyone cloning the repo can install exactly what you used? That way, your runs are 100% reproducible.
