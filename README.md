@@ -119,7 +119,7 @@ If you use this work, please cite:
 ```bibtex
 @misc{chord-transformer2025,
   title={Transformer-Based Chord Recognition on GuitarSet},
-  author={Your Name},
+  author={Lidor Goldshmidt and Ori Shinover},
   year={2025},
   note={GitHub repository}
 }
